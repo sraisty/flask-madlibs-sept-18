@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <p>
+            There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.  The 
+            {% for pet in pets %} 
+                {% if loop.first and loop.length <= 2 %} 
+                   {{pet}}
+                {% elif loop.last %}
+                    and {{pet}}
+                {% else %}
+                    {{pet}},
+                {% endif %}
+            {% endfor %}
+            started laughing.
+        </p>
+{% endblock %}
